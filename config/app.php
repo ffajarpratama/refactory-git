@@ -165,6 +165,9 @@ return [
         /*
          * Package Service Providers...
          */
+        \Modules\Dosen\Providers\DosenServiceProvider::class,
+        \Modules\Mkuliah\Providers\MkuliahServiceProvider::class,
+        \Modules\Mahasiswa\Providers\MahasiswaServiceProvider::class,
 
         /*
          * Application Service Providers...
