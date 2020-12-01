@@ -9,4 +9,9 @@ Route::get('/dashboard', Dashboard::class)->name('dashboard')->middleware('auth'
 
 Route::resource('/modules/dosen/riwayat-pendidikan',App\Http\Controllers\RiwayatPendidikanController::class)
 ->except(['index', 'create', 'store', 'show']);
+
 Route::resource('/modules/dosen/mata-kuliah', \App\Http\Controllers\DosenMatkulController::class);
+
+Route::prefix('modules/mahasiswa')->name('mahasiswa.')->group(function () {
+    Route::resource('mata-kuliah', \App\Http\Controllers\MahasiswaMatkulController::class);
+});

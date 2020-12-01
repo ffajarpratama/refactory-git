@@ -27,7 +27,7 @@
 
         @foreach($matkul as $item)
             <label>
-                <input type="checkbox" class="ui checkbox p-b-2" name="mata_kuliah[]" value="{{ $item->id }}"
+                <input type="checkbox" class="ui checkbox p-b-2" name="matkul[]" value="{{ $item->id }}"
                     {{ $dosen->mata_kuliah->contains($item->id)  ? 'checked' : ''  }}>
                 <strong>{{ $item->name }}</strong>{{ ' - ' . $item->jumlah_sks . ' SKS' }}
             </label>
