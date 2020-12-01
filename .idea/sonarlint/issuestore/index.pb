@@ -125,3 +125,5 @@ _
 /resources/views/mahasiswa-matkul/edit.blade.php,3\e\3e30640ec7aa8a3f5e29999305f3684aab6171da
 b
 2app/Http/Controllers/MahasiswaMatkulController.php,a\3\a369347ea4bb914c75478bdcd287ef31fd09a06b
+[
++modules/Mkuliah/Tables/MkuliahTableView.php,7\2\727e80ab46532b01a53c405c3789628f53b7d5e2

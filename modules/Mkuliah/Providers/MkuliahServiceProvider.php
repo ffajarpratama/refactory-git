@@ -26,7 +26,7 @@ class MkuliahServiceProvider extends BaseServiceProvider
         app('laravolt.menu.sidebar')->register(function ($menu) {
             $menu->modules
                 ->add('Mata Kuliah', route('modules::mkuliah.index'))
-                ->data('icon', 'circle outline')
+                ->data('icon', 'book')
                 ->data('permission', $this->config['permission'] ?? [])
                 ->active('modules/mkuliah/*');
         });

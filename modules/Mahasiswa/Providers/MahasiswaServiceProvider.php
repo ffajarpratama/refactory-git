@@ -26,7 +26,7 @@ class MahasiswaServiceProvider extends BaseServiceProvider
         app('laravolt.menu.sidebar')->register(function ($menu) {
             $menu->modules
                 ->add('Mahasiswa', route('modules::mahasiswa.index'))
-                ->data('icon', 'circle outline')
+                ->data('icon', 'user')
                 ->data('permission', $this->config['permission'] ?? [])
                 ->active('modules/mahasiswa/*');
         });

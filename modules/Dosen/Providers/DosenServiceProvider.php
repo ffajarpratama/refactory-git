@@ -26,7 +26,7 @@ class DosenServiceProvider extends BaseServiceProvider
         app('laravolt.menu.sidebar')->register(function ($menu) {
             $menu->modules
                 ->add('Dosen', route('modules::dosen.index'))
-                ->data('icon', 'circle outline')
+                ->data('icon', 'graduation cap')
                 ->data('permission', $this->config['permission'] ?? [])
                 ->active('modules/dosen/*');
         });

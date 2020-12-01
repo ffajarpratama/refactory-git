@@ -13,7 +13,7 @@ return [
         'layout' => 'laravolt::layouts.app',
     ],
     'menu' => [
-        'enabled' => true,
+        'enabled' => false,
     ],
     'role' => [
         'multiple' => false,

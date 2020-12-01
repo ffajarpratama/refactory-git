@@ -29,7 +29,9 @@ class MkuliahController extends Controller
 
     public function show(Mkuliah $mkuliah)
     {
-        return view('mkuliah::show', compact('mkuliah'));
+        $mahasiswa = $mkuliah->mahasiswa;
+
+        return view('mkuliah::show', compact('mkuliah', 'mahasiswa'));
     }
 
     public function edit(Mkuliah $mkuliah)
