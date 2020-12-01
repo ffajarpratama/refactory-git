@@ -11,6 +11,8 @@ use Modules\Mahasiswa\Models\Mahasiswa;
 
 class MahasiswaTableView extends TableView
 {
+    protected $title = 'Data Mahasiswa';
+
     public function source()
     {
         return Mahasiswa::autoSort()->latest()->autoSearch(request('search'))->paginate();
@@ -22,7 +24,9 @@ class MahasiswaTableView extends TableView
             Numbering::make('No'),
             Text::make('name')->sortable(),
             Text::make('nim')->sortable(),
-            Text::make('gender')->sortable(),
+            Raw::make(function ($mahasiswa) {
+                return ucfirst($mahasiswa->gender);
+            }, 'Jenis Kelamin')->sortable(),
             Raw::make(function ($mahasiswa) {
                 $tempat = $mahasiswa->tempat_lahir;
                 return $tempat . ', ' . date('d F Y', strtotime($mahasiswa->tanggal_lahir));;

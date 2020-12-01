@@ -30,7 +30,7 @@
                 <th id="sekolah">Sekolah</th>
                 <th id="tahun_mulai">Tahun Mulai</th>
                 <th id="tahun_selesai">Tahun Selesai</th>
-                <th id="" colspan="2" class="center aligned">Action</th>
+                <th id="" class="center aligned">Action</th>
             </tr>
             </thead>
             @foreach($riwayat as $item)
@@ -51,15 +51,20 @@
                         {{ date('d F Y', strtotime($item->tahun_selesai))  }}
                     </td>
                     <td class="center aligned">
-                        <a href="{{ route('riwayat-pendidikan.edit', $item->id) }}"
-                           class="ui button ">Edit</a>
-                    </td>
-                    <td class="center aligned">
-                        <form action="{{ route('riwayat-pendidikan.destroy', $item->id) }}" method="post">
-                            @csrf
-                            @method('DELETE')
-                            <input type="submit" value="Delete" class="ui button red">
-                        </form>
+                        <div class="ui icon buttons black">
+                            <a href="{{ route('riwayat-pendidikan.edit', $item->id) }}"
+                               class="ui button mini">
+                                <i class="pencil icon"></i>
+                            </a>
+
+                            <form action="{{ route('riwayat-pendidikan.destroy', $item->id) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" value="Delete" class="ui button tiny">
+                                    <i class="trash icon"></i>
+                                </button>
+                            </form>
+                        </div>
                     </td>
                 </tr>
             @endforeach

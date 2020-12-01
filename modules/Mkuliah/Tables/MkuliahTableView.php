@@ -10,6 +10,8 @@ use Modules\Mkuliah\Models\Mkuliah;
 
 class MkuliahTableView extends TableView
 {
+    protected $title = 'Data Mata Kuliah';
+    
     public function source()
     {
         return Mkuliah::autoSort()->latest()->autoSearch(request('search'))->paginate();

@@ -11,6 +11,8 @@ use Modules\Dosen\Models\Dosen;
 
 class DosenTableView extends TableView
 {
+    protected $title = 'Data Dosen';
+
     public function source()
     {
         return Dosen::autoSort()->latest()->autoSearch(request('search'))->paginate();
